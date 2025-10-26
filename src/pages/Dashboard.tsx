@@ -34,7 +34,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => (
   <button
     onClick={onClick}
-    className={`px-5 py-2 rounded-lg font-medium transition-transform transform hover:scale-105 bg-gradient-to-r from-green-400 to-teal-400 shadow-lg text-black ${className}`}
+    className={`px-5 py-2 rounded-lg font-medium transition-transform transform hover:scale-105 bg-linear-to-r from-green-400 to-teal-400 shadow-lg text-black ${className}`}
   >
     {children}
   </button>
@@ -92,6 +92,8 @@ const lineData = [
 const userScore = 65;
 
 
+
+
 // Sidebar
 const Sidebar: React.FC<{ isOpen: boolean; toggle: () => void }> = ({
   isOpen,
@@ -109,7 +111,7 @@ const Sidebar: React.FC<{ isOpen: boolean; toggle: () => void }> = ({
       initial={{ x: -300 }}
       animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -300 }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-      className="fixed lg:relative top-0 left-0 h-screen w-60 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 p-6 shadow-lg z-50 flex flex-col justify-between flex-shrink-0 rounded-xl overflow-y-auto"
+      className="fixed lg:relative top-0 left-0 h-screen w-60 bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 p-6 shadow-lg z-50 flex flex-col justify-between shrink-0 rounded-xl overflow-y-auto"
     >
       <div>
         <div className="flex items-center justify-between mb-10">
@@ -286,5 +288,7 @@ const GreenScoreDashboard: React.FC = () => {
     </div>
   );
 };
+
+
 
 export default GreenScoreDashboard;

@@ -114,7 +114,7 @@ const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
 }) => (
   <button
     {...rest}
-    className={`px-3 py-2 rounded-md font-semibold transition transform hover:scale-[1.02] bg-gradient-to-r from-green-500 to-teal-400 text-black ${
+    className={`px-3 py-2 rounded-md font-semibold transition transform hover:scale-[1.02] bg-linear-to-r from-green-500 to-teal-400 text-black ${
       className || ""
     }`}
   >
@@ -150,7 +150,7 @@ const Sidebar: React.FC<{ isOpen: boolean; toggle: () => void }> = ({
       initial={{ x: -300 }}
       animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -300 }}
       transition={{ type: "spring", stiffness: 250, damping: 30 }}
-      className="fixed lg:relative top-0 left-0 h-screen w-60 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 p-6 shadow-lg z-50 flex flex-col justify-between rounded-xl overflow-y-auto"
+      className="fixed lg:relative top-0 left-0 h-screen w-60 bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 p-6 shadow-lg z-50 flex flex-col justify-between rounded-xl overflow-y-auto"
     >
       <div>
         <div className="flex items-center justify-between mb-8">
@@ -431,7 +431,7 @@ const EcoMarket: React.FC = () => {
                     className={`px-3 py-2 rounded-md text-sm font-semibold ${
                       (p.stock ?? 0) <= 0
                         ? "bg-white/5 text-gray-400 cursor-not-allowed"
-                        : "bg-gradient-to-r from-green-500 to-teal-400 text-black"
+                        : "bg-linear-to-r from-green-500 to-teal-400 text-black"
                     }`}
                     aria-disabled={(p.stock ?? 0) <= 0}
                   >
@@ -471,7 +471,7 @@ const EcoMarket: React.FC = () => {
         initial={{ x: 400 }}
         animate={{ x: cartOpen ? 0 : 400 }}
         transition={{ type: "spring", stiffness: 260, damping: 30 }}
-        className="fixed right-0 top-0 h-full w-full max-w-md bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 p-4 z-50 shadow-lg"
+        className="fixed right-0 top-0 h-full w-full max-w-md bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 p-4 z-50 shadow-lg"
         aria-hidden={!cartOpen}
       >
         <div className="flex items-center justify-between mb-4">
@@ -561,7 +561,7 @@ const EcoMarket: React.FC = () => {
           <div className="flex gap-2">
             <button
               onClick={handleCheckout}
-              className="flex-1 px-4 py-2 rounded bg-gradient-to-r from-green-500 to-teal-400 font-semibold"
+              className="flex-1 px-4 py-2 rounded bg-linear-to-r from-green-500 to-teal-400 font-semibold"
             >
               <CreditCard className="inline mr-2" /> Checkout
             </button>
@@ -611,7 +611,7 @@ const EcoMarket: React.FC = () => {
                 <div className="mt-3 flex items-center gap-2">
                   <button
                     onClick={() => addToCart(selected, 1)}
-                    className="px-3 py-2 rounded bg-gradient-to-r from-green-500 to-teal-400 font-semibold"
+                    className="px-3 py-2 rounded bg-linear-to-r from-green-500 to-teal-400 font-semibold"
                   >
                     Add to Cart
                   </button>

@@ -122,11 +122,11 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const Button: React.FC<ButtonProps> = ({ children, className, onClick }) => (
   <button
     onClick={onClick}
-    className={`px-5 py-2 rounded-lg font-medium transition-transform transform hover:scale-105 bg-gradient-to-r from-green-400 to-teal-400 shadow-lg text-black ${className}`}
+    className={`px-5 py-2 rounded-lg font-medium transition-transform transform hover:scale-105 bg-linear-to-r from-green-400 to-teal-400 shadow-lg text-black ${className}`}
   >
     {children}
   </button>
@@ -137,7 +137,7 @@ interface CardProps {
   className?: string;
   bgGradient?: string;
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const Card: React.FC<CardProps> = ({ children, className, bgGradient }) => (
   <div
     className={`shadow-lg rounded-xl p-5 ${
@@ -147,11 +147,11 @@ const Card: React.FC<CardProps> = ({ children, className, bgGradient }) => (
     {children}
   </div>
 );
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const CardHeader: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="border-b border-gray-700 pb-2 mb-2">{children}</div>
 );
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const CardTitle: React.FC<{ children: React.ReactNode; color?: string }> = ({
   children,
   color,
@@ -160,7 +160,7 @@ const CardTitle: React.FC<{ children: React.ReactNode; color?: string }> = ({
     {children}
   </h3>
 );
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const CardContent: React.FC<{
   children: React.ReactNode;
   className?: string;
@@ -185,7 +185,7 @@ const Sidebar: React.FC<{ isOpen: boolean; toggle: () => void }> = ({
       initial={{ x: -300 }}
       animate={{ x: isOpen || window.innerWidth >= 1024 ? 0 : -300 }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-      className="fixed lg:relative top-0 left-0 h-screen w-60 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 p-6 shadow-lg z-50 flex flex-col justify-between flex-shrink-0 rounded-xl overflow-y-auto"
+      className="fixed lg:relative top-0 left-0 h-screen w-60 bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 p-6 shadow-lg z-50 flex flex-col justify-between shrink-0 rounded-xl overflow-y-auto"
     >
       <div>
         <div className="flex items-center justify-between mb-10">
@@ -221,7 +221,7 @@ const CarbonTracker: React.FC = () => {
   const [weekly, setWeekly] = useState<WeeklyPoint[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [activities, setActivities] = useState<Activity[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
   const [loading, setLoading] = useState(true);
   const [adding, setAdding] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -255,7 +255,7 @@ const CarbonTracker: React.FC = () => {
     () => weekly.reduce((s, p) => s + p.co2, 0),
     [weekly]
   );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
   const totalCategories = useMemo(
     () => categories.reduce((s, c) => s + c.valueKg, 0),
     [categories]
@@ -364,7 +364,7 @@ const CarbonTracker: React.FC = () => {
 
             <button
               onClick={() => setAdding((s) => !s)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-teal-400 text-black px-3 py-2 rounded-lg font-semibold shadow"
+              className="inline-flex items-center gap-2 bg-linear-to-r from-green-500 to-teal-400 text-black px-3 py-2 rounded-lg font-semibold shadow"
             >
               <Plus size={16} /> Add Activity
             </button>
@@ -721,7 +721,7 @@ const CarbonTracker: React.FC = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-3 py-2 rounded bg-gradient-to-r from-green-500 to-teal-400 text-black font-semibold"
+                    className="px-3 py-2 rounded bg-linear-to-r from-green-500 to-teal-400 text-black font-semibold"
                   >
                     Save Activity
                   </button>
