@@ -7,10 +7,12 @@ import Profile from './pages/Profile';
 import Settings from './pages/Setting';
 
 
+
 const App = () => {
+  
   return (
       <Router>
-      <div > {/* padding to push content below navbar */}
+      <div> 
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/CarbonTracker" element={<CarbonTracker />} />

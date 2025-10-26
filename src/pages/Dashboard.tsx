@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import {
   Leaf,
-  BarChart3,
-  Settings,
-  User,
-  Globe2,
-  ShoppingBag,
   AlertTriangle,
   Menu,
   X,
@@ -21,6 +16,7 @@ import {
 } from "recharts";
 import { motion } from "framer-motion";
 import ScoreCircle from "../components/ScoreCircle";
+import Navbar from "../components/Navbar";
 
 
 // Button and Card components as before
@@ -95,6 +91,7 @@ const lineData = [
 
 const userScore = 65;
 
+
 // Sidebar
 const Sidebar: React.FC<{ isOpen: boolean; toggle: () => void }> = ({
   isOpen,
@@ -124,24 +121,11 @@ const Sidebar: React.FC<{ isOpen: boolean; toggle: () => void }> = ({
             className="text-gray-400 cursor-pointer lg:hidden"
             onClick={toggle}
           />
+
+        
         </div>
-        <ul className="space-y-4 text-gray-300 font-medium ">
-          <li className="flex items-center gap-3 cursor-pointer hover:text-green-400 transition-colors">
-            <BarChart3 size={18} /> <a href="/">Dashboard</a>
-          </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:text-teal-400 transition-colors">
-            <Globe2 size={18} /> <a href="/CarbonTracker">Carbon Tracker</a>
-          </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:text-yellow-400 transition-colors">
-            <ShoppingBag size={18} /><a href="/EcoMarket">Eco Market</a> 
-          </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:text-coral-400 transition-colors">
-            <User size={18} /> <a href="/Profile">Profile</a>
-          </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:text-green-500 transition-colors">
-            <Settings size={18} /><a href="/Settings">Settings</a> 
-          </li>
-        </ul>
+        <Navbar/>
+        
       </div>
 
       <div className="mt-7 ">
@@ -240,7 +224,7 @@ const MainDashboard: React.FC<{ toggleSidebar: () => void }> = ({
       <CardContent>
           <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.youtube.com/embed/IhEXBQPtLL4"
+              src="https://www.youtube.com/embed/8q7_aV8eLUE?si=7gZUJnfofHcQAqKx"
               title="climate updates"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
